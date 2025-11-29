@@ -48,63 +48,63 @@ public class TeamCommand implements ICommand {
         this.command = command.trim();
     }
 
-    static TeamCommand list(String teamName) {
+    public static TeamCommand list(String teamName) {
         return new TeamCommand("list " + Objects.requireNonNull(teamName));
     }
 
-    static TeamCommand add(String teamName, String displayName) {
+    public static TeamCommand add(String teamName, String displayName) {
         return new TeamCommand("add " + Objects.requireNonNull(teamName) + " " + Objects.requireNonNull(displayName));
     }
 
-    static TeamCommand remove(String teamName) {
+    public static TeamCommand remove(String teamName) {
         return new TeamCommand("remove " + Objects.requireNonNull(teamName));
     }
 
-    static TeamCommand empty(String teamName) {
+    public static TeamCommand empty(String teamName) {
         return new TeamCommand("empty " + Objects.requireNonNull(teamName));
     }
 
-    static TeamCommand join(String teamName, String... members) {
+    public static TeamCommand join(String teamName, String... members) {
         return new TeamCommand("join " + Objects.requireNonNull(teamName) + " " + String.join(" ", members));
     }
 
-    static TeamCommand leave(String... playerNames) {
+    public static TeamCommand leave(String... playerNames) {
         return new TeamCommand("leave " + String.join(" ", playerNames));
     }
 
-    static TeamCommand modifyDisplayName(String teamName, String displayName) {
+    public static TeamCommand modifyDisplayName(String teamName, String displayName) {
         return new TeamCommand("modify " + Objects.requireNonNull(teamName) + " displayName " + Objects.requireNonNull(displayName));
     }
 
-    static TeamCommand modifyColor(String teamName, Color color) {
+    public static TeamCommand modifyColor(String teamName, Color color) {
         return new TeamCommand("modify " + Objects.requireNonNull(teamName) + " color " + Objects.requireNonNull(color));
     }
 
-    static TeamCommand modifyFriendlyFire(String teamName, boolean friendlyFire) {
+    public static TeamCommand modifyFriendlyFire(String teamName, boolean friendlyFire) {
         return new TeamCommand("modify " + Objects.requireNonNull(teamName) + " friendlyFire " + friendlyFire);
     }
 
-    static TeamCommand modifySeeFriendlyInvisibles(String teamName, boolean seeFriendlyInvisibles) {
+    public static TeamCommand modifySeeFriendlyInvisibles(String teamName, boolean seeFriendlyInvisibles) {
         return new TeamCommand("modify " + Objects.requireNonNull(teamName) + " seeFriendlyInvisibles " + seeFriendlyInvisibles);
     }
 
-    static TeamCommand modifyNametagVisibility(String teamName, Visibility nametagVisibility) {
+    public static TeamCommand modifyNametagVisibility(String teamName, Visibility nametagVisibility) {
         return new TeamCommand("modify " + Objects.requireNonNull(teamName) + " nametagVisibility " + Objects.requireNonNullElse(nametagVisibility, Visibility.ALWAYS));
     }
 
-    static TeamCommand modifyDeathMessageVisibility(String teamName, Visibility deathMessageVisibility) {
+    public static TeamCommand modifyDeathMessageVisibility(String teamName, Visibility deathMessageVisibility) {
         return new TeamCommand("modify " + Objects.requireNonNull(teamName) + " deathMessageVisibility " + Objects.requireNonNullElse(deathMessageVisibility, Visibility.ALWAYS));
     }
 
-    static TeamCommand modifyCollisionRule(String teamName, CollisionRule collisionRule) {
+    public static TeamCommand modifyCollisionRule(String teamName, CollisionRule collisionRule) {
         return new TeamCommand("modify " + Objects.requireNonNull(teamName) + " collisionRule " + Objects.requireNonNullElse(collisionRule, CollisionRule.ALWAYS));
     }
 
-    static TeamCommand modifyPrefix(String teamName, String prefix) {
+    public static TeamCommand modifyPrefix(String teamName, String prefix) {
         return new TeamCommand("modify " + Objects.requireNonNull(teamName) + " prefix " + Objects.requireNonNull(prefix));
     }
 
-    static TeamCommand modifySuffix(String teamName, String suffix) {
+    public static TeamCommand modifySuffix(String teamName, String suffix) {
         return new TeamCommand("modify " + Objects.requireNonNull(teamName) + " suffix " + Objects.requireNonNull(suffix));
     }
 
